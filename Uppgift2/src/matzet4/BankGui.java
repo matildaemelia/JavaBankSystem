@@ -26,6 +26,7 @@ public class BankGui extends JFrame {
 		displayArea.setEditable(false); // Gör så att man inte kan ändra.
 		JScrollPane scrollPane = new JScrollPane(displayArea); // Gör att mitten går att skrolla
 		add(scrollPane, BorderLayout.CENTER);
+		displayArea.setBackground(Color.LIGHT_GRAY);
 		
 		// Input
 		inputField = new JTextField();
