@@ -25,7 +25,7 @@ public class CreditAccount extends Account {
 	}
 	
 	// Om beloppet är större än 0 så läggs det till som en transaktion till totalbeloppet
-	public void deposit(int amount) {
+	public void deposit(double amount) {
 		if (amount > 0) {
 			addTransaction(BigDecimal.valueOf(amount));
 		}
@@ -33,7 +33,7 @@ public class CreditAccount extends Account {
 	
 	// Ta ut belopp om det är positivt och inte överskrider creditLimit
 	@Override
-	public boolean withdraw(int amount) {
+	public boolean withdraw(double amount) {
 		if(amount > 0) {
 			BigDecimal newBalance = balance.subtract(BigDecimal.valueOf(amount));
 			if (newBalance.compareTo(creditLimit) >= 0) {

@@ -19,7 +19,7 @@ public class SavingsAccount extends Account {
 	}
 	
 	// Om beloppet är större än 0 så läggs det till som en transaktion till totalbeloppet
-	public void deposit(int amount) {
+	public void deposit(double amount) {
 		if (amount > 0) {
 			addTransaction(BigDecimal.valueOf(amount));
 		}
@@ -27,7 +27,7 @@ public class SavingsAccount extends Account {
 	
 	// Metod för att ta ut pengar
 	@Override
-	public boolean withdraw(int amount) {
+	public boolean withdraw(double amount) {
 		if (amount > 0) {
 			BigDecimal totalAmount = BigDecimal.valueOf(amount);
 			if (!firstWithdrawal) { // Lägg till avgift om det inte är första uttaget

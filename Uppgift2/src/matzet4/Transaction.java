@@ -1,4 +1,5 @@
 package matzet4;
+import java.io.Serializable;
 /**
  * @author Matilda Zettergren, matzet-4
  */
@@ -10,7 +11,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
-public class Transaction {
+public class Transaction implements Serializable {
 	private BigDecimal amount;
 	private BigDecimal balanceExTransaction;
 	private String type;

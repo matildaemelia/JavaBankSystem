@@ -2,10 +2,11 @@ package matzet4;
 /**
  * @author Matilda Zettergren, matzet-4
  */
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Customer {
+public class Customer implements Serializable {
 	private String name;
 	private String surname;
 	private String personalNumber;
@@ -17,6 +18,10 @@ public class Customer {
 		this.surname = surname;
 		this.personalNumber = personalNumber;
 		this.accounts = new ArrayList<>();
+	}
+	
+	public void addAccount(Account account) {
+		accounts.add(account);
 	}
 	
 	// Metod för att få hela namnet

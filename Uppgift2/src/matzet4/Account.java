@@ -2,6 +2,7 @@ package matzet4;
 /**
  * @author Matilda Zettergren, matzet-4
  */
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -12,7 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-abstract class Account {
+abstract class Account implements Serializable {
+	private static final long serialVersionUID = 4466180876220015448L;
 	protected static int nextAccountNumber = 1001;
 	protected int accountNumber;
 	protected BigDecimal balance;
@@ -22,6 +24,14 @@ abstract class Account {
     protected static final DecimalFormat currencyFormat = new DecimalFormat("###,##0.00", new DecimalFormatSymbols(new Locale("sv", "SE")));
     protected static final DecimalFormat percentageFormat = new DecimalFormat("0.0", new DecimalFormatSymbols(new Locale("sv", "SE")));
 	
+    public static void setNextAccountNumber(int nextNumber) {
+    	nextAccountNumber = nextNumber;
+    }
+    
+    public static int getNextAccountNumber() {
+    	return nextAccountNumber;
+    }
+    
 	public Account() {
 		this.accountNumber = nextAccountNumber++;
 		this.balance = BigDecimal.ZERO;
@@ -55,9 +65,9 @@ abstract class Account {
     
     public abstract BigDecimal calcInterest();
     
-    public abstract boolean withdraw(int amount);
+    public abstract boolean withdraw(double amount);
     
-    public abstract void deposit(int amount);
+    public abstract void deposit(double amount);
     
     public String toString() { // Returnerar en String med accountNumber och balance
     	return accountNumber + " " + currencyFormat.format(balance) + " kr";

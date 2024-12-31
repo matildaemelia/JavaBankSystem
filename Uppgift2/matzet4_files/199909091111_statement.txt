@@ -1,0 +1,8 @@
+Kontoutdrag för: Anna Svensson
+Personnummer: 199909091111
+Datum: 2024-12-20
+Kontonummer: 1001
+Saldo: 400.00
+Transaktioner:
+2024-12-20 22:34:47 500,00 kr Saldo: 500,00 kr
+2024-12-20 22:34:54 −100,00 kr Saldo: 400,00 kr
