@@ -271,6 +271,7 @@ public class BankLogic {
 		return null;
 	}
 	
+	// Visa transaktioner för specifikt konto
 	public static void showTransactions() {
 		System.out.print("Ange personnummer för kund: ");
 		String personalNumber = scanner.nextLine();
@@ -294,6 +295,7 @@ public class BankLogic {
 		}
 	}
 	
+	// Ta bprt konto
 	public static void removeAccount() {
 		String personalNumber = scanner.nextLine();
 		Customer customer = findCustomer(personalNumber);

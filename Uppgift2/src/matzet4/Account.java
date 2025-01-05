@@ -33,7 +33,7 @@ abstract class Account implements Serializable {
     }
     
 	public Account() {
-		this.accountNumber = nextAccountNumber++;
+		this.accountNumber = nextAccountNumber++; // Ökar och ger unikt kontonummer för varje nytt konto
 		this.balance = BigDecimal.ZERO;
 		this.transactions = new ArrayList<>();
 	}
